@@ -1,32 +1,27 @@
-# Fibotelecom — новый сайт
+# Fibotelecom frontend
 
-Новый сайт Fibotelecom. Текущий этап: локальный MVP без backend и без платных сервисов.
+## Current state
 
-## Стек
-- React + TypeScript + Vite
-- React Router
-- CSS
+The root page is based on the HTML capture of the live Fibotelecom homepage supplied for this task. It preserves the captured page markup and embedded initial page data, rather than the earlier approximate demo homepage.
 
-## Локальный запуск
-Нужен Node.js LTS. Docker не требуется.
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Обычно сайт будет доступен по адресу http://localhost:5173.
+Vite starts at `http://127.0.0.1:5173`.
 
-## Сейчас реализовано
-- Адаптивная главная страница
-- Каталог с поиском и категориями
-- Карточки товаров
-- Корзина для запроса коммерческого предложения
-- Контакты и информационные страницы
+## Known limitations
 
-Данные товаров демонстрационные. Форма не отправляет заявки. Перед публикацией нужно заменить тестовые данные проверенными, проверить права на контент и юридические документы.
+- This is a captured homepage, not a fully self-contained mirror of every page on `fibotelecom.ru`.
+- The original CSS, JavaScript bundle, fonts, and product images are still referenced from `https://fibotelecom.ru` and related public asset hosts. Internet access is required, and those remote files can change.
+- The HTML contains captured navigation paths and page data, but other routes have not yet been independently captured and checked.
+- Third-party analytics and tracking scripts were removed from the saved page. The live site's application bundle remains an external dependency.
 
-## Правила
-- Не использовать реальные данные клиентов в тестовом проекте.
-- Не коммитить `.env`, пароли, токены или ключи.
-- Интеграционные секреты не должны попадать во frontend.
+## Next steps
+
+1. Capture and transfer the styles, scripts, fonts, and images into the repository.
+2. Capture the required internal pages and verify navigation and responsive behavior.
+3. Move the page into the project's local frontend implementation and remove runtime dependencies on the live site.
